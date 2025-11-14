@@ -1,0 +1,29 @@
+.creative-portfolio-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background: #1a1a1a;
+  color: white;
+}
+
+.creative-portfolio-page .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.back-link:hover {
+  opacity: 1;
+}
+
+.creative-portfolio-page h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}

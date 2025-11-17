@@ -6,12 +6,7 @@ function RedirectoryPage() {
     <div className="redirectory-page">
       {/* Background animé FloatingLines */}
       <div className="floating-lines-background">
-        <FloatingLines
-          linesGradient={['#0d1117', '#1a1f2e', '#1e2a3a', '#2d3e50']}
-          lineCount={5}
-          lineDistance={8}
-          interactive={false}
-        />
+        <FloatingLines />
       </div>
 
       {/* Contenu principal (au-dessus du background) */}

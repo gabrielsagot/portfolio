@@ -19,6 +19,14 @@ function RedirectoryPage() {
             <p className="tagline">Développeur & Designer</p>
           </header>
 
+          {/* Section choix */}
+          <section className="selection-section">
+            <h2 className="selection-title">Choisissez votre expérience</h2>
+            <p className="selection-description">
+              Découvrez mes projets à travers deux univers distincts
+            </p>
+          </section>
+
           {/* Choix des portfolios */}
           <div className="portfolio-choices">
             <Link to="/creative" className="glass-card">

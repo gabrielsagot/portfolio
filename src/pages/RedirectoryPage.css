@@ -58,6 +58,12 @@
 /* Section de sélection */
 .selection-section {
   margin-bottom: 3rem;
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
 }
 
 .selection-title {
@@ -70,7 +76,7 @@
 
 .selection-description {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
 }
 

@@ -58,6 +58,34 @@
   }
 }
 
+/* Photo de profil */
+.profile-photo-wrapper {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 12px 48px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
 /* Nom */
 .hero-name {
   font-size: clamp(3.5rem, 10vw, 6.5rem);
@@ -68,8 +96,9 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
   margin-bottom: 1.25rem;
-  line-height: 1;
-  animation: fadeInUp 0.8s ease-out 0.1s both;
+  line-height: 1.15;
+  padding-bottom: 0.2rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 /* Titre */
@@ -79,7 +108,7 @@
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  animation: fadeInUp 0.8s ease-out 0.2s both;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
 }
 
 /* ========================================
@@ -313,6 +342,15 @@
     margin-bottom: 3.5rem;
   }
 
+  .profile-photo {
+    width: 110px;
+    height: 110px;
+  }
+
+  .profile-photo-wrapper {
+    margin-bottom: 2rem;
+  }
+
   .hero-name {
     font-size: 3rem;
   }
@@ -341,13 +379,21 @@
 }
 
 @media (max-width: 480px) {
+  .profile-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .profile-photo-wrapper {
+    margin-bottom: 1.75rem;
+  }
+
   .hero-name {
     font-size: 2.5rem;
   }
 
-  .name-badge {
-    font-size: 0.8125rem;
-    padding: 0.4rem 0.875rem;
+  .hero-title {
+    font-size: 0.9375rem;
   }
 
   .card-content {

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import FloatingLines from '../components/FloatingLines'
+import profilePhoto from '../images/gabriel.jpg'
 import './RedirectoryPage.css'
 
 function RedirectoryPage() {
@@ -13,10 +14,13 @@ function RedirectoryPage() {
       {/* Contenu principal */}
       <main className="redirectory-content">
         <div className="main-container">
-          {/* Header avec nom */}
+          {/* Header avec nom et photo */}
           <header className="hero-section">
+            <div className="profile-photo-wrapper">
+              <img src={profilePhoto} alt="Gabriel Sagot" className="profile-photo" />
+            </div>
             <h1 className="hero-name">Gabriel Sagot</h1>
-            <p className="hero-title">Développeur & Designer</p>
+            <p className="hero-title">Étudiant et créateur</p>
           </header>
 
           {/* Section principale avec les cartes */}

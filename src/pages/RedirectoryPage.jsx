@@ -15,7 +15,7 @@ function RedirectoryPage() {
         <div className="glass-container">
           {/* Nom/Prénom */}
           <header className="intro">
-            <h1 className="name">Gabriel Sagot</h1>
+            <h1 className="name">Gabriel Sagot <span style={{ color: 'red' }}>test</span></h1>
             <p className="tagline">Développeur & Designer</p>
           </header>
 

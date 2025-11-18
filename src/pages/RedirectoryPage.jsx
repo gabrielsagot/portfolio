@@ -15,10 +15,6 @@ function RedirectoryPage() {
         <div className="main-container">
           {/* Header avec nom */}
           <header className="hero-section">
-            <div className="name-badge">
-              <span className="badge-dot"></span>
-              <span className="badge-text">Disponible pour de nouveaux projets</span>
-            </div>
             <h1 className="hero-name">Gabriel Sagot</h1>
             <p className="hero-title">Développeur & Designer</p>
           </header>

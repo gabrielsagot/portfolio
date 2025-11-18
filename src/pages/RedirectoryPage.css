@@ -1,8 +1,13 @@
+/* ========================================
+   RESET & BASE
+   ======================================== */
+
 /* Conteneur principal de la page */
 .redirectory-page {
   position: relative;
   min-height: 100vh;
   overflow: hidden;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
 }
 
 /* Background FloatingLines - fixé en arrière-plan */
@@ -16,7 +21,7 @@
   pointer-events: none;
 }
 
-/* Contenu principal - au-dessus du background */
+/* Contenu principal */
 .redirectory-content {
   position: relative;
   z-index: 10;
@@ -24,165 +29,368 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
 }
 
-/* Container principal avec effet glass */
-.glass-container {
-  max-width: 900px;
+.main-container {
+  max-width: 1000px;
   width: 100%;
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero-section {
   text-align: center;
-}
-
-/* Section nom/prénom */
-.intro {
   margin-bottom: 5rem;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-.name {
-  font-size: 5rem;
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.tagline {
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.05em;
+/* Badge "Disponible" */
+.name-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  margin-bottom: 2rem;
+  animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
-/* Section de sélection */
-.selection-section {
-  margin-bottom: 3rem;
-  padding: 2rem 2.5rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 16px;
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+  animation: pulse 2s ease-in-out infinite;
 }
 
-.selection-title {
-  font-size: 1.75rem;
-  font-weight: 400;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
 }
 
-.selection-description {
-  font-size: 1.125rem;
+.badge-text {
+  font-size: 0.875rem;
+  font-weight: 500;
   color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 0.02em;
+}
+
+/* Nom */
+.hero-name {
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 200;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.7) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Titre */
+.hero-title {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* ========================================
+   PORTFOLIO SECTION
+   ======================================== */
+
+.portfolio-section {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.4);
   font-weight: 300;
+  line-height: 1.6;
 }
 
-/* Grille des choix */
-.portfolio-choices {
+/* ========================================
+   CARDS GRID
+   ======================================== */
+
+.cards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+  perspective: 1000px;
 }
 
-/* Cartes glassmorphism */
-.glass-card {
+/* ========================================
+   PORTFOLIO CARDS
+   ======================================== */
+
+.portfolio-card {
   position: relative;
-  padding: 2rem 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 24px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.portfolio-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  text-decoration: none;
-  color: white;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 180px;
+  border-radius: 24px;
+  transition: all 0.4s ease;
+  z-index: 1;
 }
 
-.glass-card::before {
+.portfolio-card::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 0%,
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 60%
+  );
   opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
+  transition: opacity 0.4s ease;
+  z-index: 2;
 }
 
-.glass-card:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.08);
+.portfolio-card:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.portfolio-card:hover::before {
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(255, 255, 255, 0.04) 100%
+  );
   border-color: rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
-.glass-card:hover::before {
+.portfolio-card:hover::after {
   opacity: 1;
 }
 
-.glass-card h2 {
-  font-size: 2rem;
+.portfolio-card:hover .card-glow {
+  opacity: 1;
+}
+
+.portfolio-card:hover .card-arrow {
+  transform: translateX(4px);
+}
+
+.portfolio-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Glow effect */
+.card-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg,
+    rgba(147, 197, 253, 0.3) 0%,
+    rgba(196, 181, 253, 0.3) 100%
+  );
+  filter: blur(20px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+  border-radius: 24px;
+}
+
+.creative-card .card-glow {
+  background: linear-gradient(135deg,
+    rgba(236, 72, 153, 0.3) 0%,
+    rgba(168, 85, 247, 0.3) 100%
+  );
+}
+
+.pro-card .card-glow {
+  background: linear-gradient(135deg,
+    rgba(59, 130, 246, 0.3) 0%,
+    rgba(99, 102, 241, 0.3) 100%
+  );
+}
+
+/* Card content */
+.card-content {
+  position: relative;
+  z-index: 3;
+  padding: 2.5rem;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Icon */
+.card-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+}
+
+/* Card title */
+.card-title {
+  font-size: 1.75rem;
   font-weight: 500;
-  margin-bottom: 1rem;
-  letter-spacing: -0.01em;
-  text-align: center;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
 }
 
-.glass-card p {
-  font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.6);
+/* Card description */
+.card-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.6;
+  margin-bottom: auto;
   font-weight: 300;
-  text-align: center;
 }
 
-/* Responsive */
+/* Arrow */
+.card-arrow {
+  align-self: flex-start;
+  margin-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
 @media (max-width: 768px) {
-  .glass-container {
-    max-width: 100%;
+  .redirectory-content {
+    padding: 3rem 1.5rem;
   }
 
-  .name {
+  .hero-section {
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-name {
     font-size: 3rem;
   }
 
-  .tagline {
-    font-size: 1.25rem;
-  }
-
-  .selection-title {
-    font-size: 1.5rem;
-  }
-
-  .selection-description {
+  .hero-title {
     font-size: 1rem;
   }
 
-  .portfolio-choices {
+  .cards-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
 
-  .glass-card {
-    padding: 3rem 2rem;
+  .card-content {
+    padding: 2rem;
+    min-height: 200px;
   }
 
-  .glass-card h2 {
-    font-size: 1.75rem;
+  .section-title {
+    font-size: 1.25rem;
   }
 
-  .glass-card p {
-    font-size: 1rem;
+  .section-subtitle {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .name-badge {
+    font-size: 0.8125rem;
+    padding: 0.4rem 0.875rem;
+  }
+
+  .card-content {
+    padding: 1.75rem;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========================================
+   ANIMATIONS & INTERACTIONS
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

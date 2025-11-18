@@ -90,7 +90,7 @@
 /* Cartes glassmorphism */
 .glass-card {
   position: relative;
-  padding: 3.5rem 2.5rem;
+  padding: 2rem 1.5rem;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -100,6 +100,11 @@
   color: white;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
 }
 
 .glass-card::before {
@@ -131,6 +136,7 @@
   font-weight: 500;
   margin-bottom: 1rem;
   letter-spacing: -0.01em;
+  text-align: center;
 }
 
 .glass-card p {
@@ -138,6 +144,7 @@
   color: rgba(255, 255, 255, 0.6);
   line-height: 1.6;
   font-weight: 300;
+  text-align: center;
 }
 
 /* Responsive */

@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
 }
 
 .main-container {
@@ -43,7 +43,7 @@
 
 .hero-section {
   text-align: center;
-  margin-bottom: 6rem;
+  margin-bottom: 3rem;
   animation: fadeInUp 0.8s ease-out;
 }
 
@@ -61,13 +61,13 @@
 /* Photo de profil */
 .profile-photo-wrapper {
   display: inline-block;
-  margin-bottom: 2.5rem;
+  margin-bottom: 1.25rem;
   animation: fadeInUp 0.8s ease-out 0.1s both;
 }
 
 .profile-photo {
-  width: 140px;
-  height: 140px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid rgba(255, 255, 255, 0.15);
@@ -88,14 +88,14 @@
 
 /* Nom */
 .hero-name {
-  font-size: clamp(3.5rem, 10vw, 6.5rem);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 200;
   letter-spacing: -0.03em;
   background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
   line-height: 1.15;
   padding-bottom: 0.2rem;
   animation: fadeInUp 0.8s ease-out 0.2s both;
@@ -103,7 +103,7 @@
 
 /* Titre */
 .hero-title {
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.55);
   letter-spacing: 0.12em;
@@ -121,26 +121,26 @@
 
 .section-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   padding: 0 1rem;
 }
 
 .section-title {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .section-subtitle {
-  font-size: 1.0625rem;
+  font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.75);
   font-weight: 400;
-  line-height: 1.6;
+  line-height: 1.5;
   max-width: 500px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.75rem 1.25rem;
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -154,8 +154,8 @@
 
 .cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   perspective: 1000px;
 }
 
@@ -282,41 +282,46 @@
 .card-content {
   position: relative;
   z-index: 3;
-  padding: 2.5rem;
-  min-height: 240px;
+  padding: 2rem 1.75rem;
+  min-height: 190px;
   display: flex;
   flex-direction: column;
 }
 
 /* Icon */
 .card-icon {
-  width: 48px;
-  height: 48px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.25rem;
   color: rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
 }
 
+.card-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
 /* Card title */
 .card-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #ffffff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
   letter-spacing: -0.02em;
 }
 
 /* Card description */
 .card-description {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.5);
-  line-height: 1.6;
+  line-height: 1.5;
   margin-bottom: auto;
   font-weight: 300;
 }
@@ -324,7 +329,7 @@
 /* Arrow */
 .card-arrow {
   align-self: flex-start;
-  margin-top: 1.5rem;
+  margin-top: 1.25rem;
   color: rgba(255, 255, 255, 0.6);
   transition: all 0.3s ease;
 }
